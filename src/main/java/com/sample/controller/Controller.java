@@ -8,7 +8,7 @@ public class Controller {
     
     @GetMapping("/")
     public String getMessage() {
-        return "successfully deployed..,";
+        return "successfully deployed.., ";
     }
 
 }
