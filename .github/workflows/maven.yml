@@ -46,14 +46,14 @@ jobs:
     #     service_account_key: ${{ secrets.GCP_SA_KEY }}
     #     export_default_credentials: true
 
-    - name: Stop Running Java Application
-      run: |
-        gcloud compute ssh ${GCP_VM_NAME} --zone ${GCP_VM_ZONE} --project ${GCP_PROJECT_ID} --command "pkill -f 'java -jar /mnt/disks/CLM/satyam-sample/sample-0.0.1-SNAPSHOT.jar' || true"
-      env:
-        GCP_VM_USERNAME: ${{ secrets.GCP_VM_USERNAME }}
-        GCP_VM_NAME: ${{ secrets.GCP_VM_NAME }}
-        GCP_VM_ZONE: ${{ secrets.GCP_VM_ZONE }}
-        GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+    # - name: Stop Running Java Application
+    #   run: |
+    #     gcloud compute ssh ${GCP_VM_USERNAME}@${GCP_VM_NAME} --zone ${GCP_VM_ZONE} --project ${GCP_PROJECT_ID} --command "pkill -f 'java -jar /mnt/disks/CLM/satyam-sample/sample-0.0.1-SNAPSHOT.jar' || true"
+    #   env:
+    #     GCP_VM_USERNAME: ${{ secrets.GCP_VM_USERNAME }}
+    #     GCP_VM_NAME: ${{ secrets.GCP_VM_NAME }}
+    #     GCP_VM_ZONE: ${{ secrets.GCP_VM_ZONE }}
+    #     GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
 
     - name: Copy JAR to Google Cloud VM
       run: |
